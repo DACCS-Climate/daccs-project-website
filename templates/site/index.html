@@ -1,0 +1,101 @@
+{% extends "layouts/main.html" %}
+{% set page_title = "The DACCS Project" %}
+{% set page_heading = "The DACCS Project" %}
+
+{% block project_description %}
+<div class="col-12 d-block py-3 mx-auto">
+    <div class="row">
+        <div class="col-11 d-block mx-auto border rounded cover-text-box">
+            <h1 class="text-center">{{ page_heading }}</h1>
+            <p>
+                 The Data Analytics for Canadian Climate Services (DACCS) gateway will facilitate the conversion of raw climate data
+                 from satellite observations and simulation models into relevant, credible and actionable information products.
+                 DACCS is a Science Gateway comprised of reusable modular components that will provide services to a broad scientific
+                 community through a unified user interface for: dataset search and discovery; user data management; data analytics;
+                 visualisation; workflow management; publishing; and application deployment. As part of a larger Federated Cloud
+                 Infrastructure, through this gateway, scientists can access data from different sources and process them using
+                 existing algorithms developed by the academic, government and private sectors. Typical outputs are tables, time
+                 series and graphics that support climate change impact studies, vulnerability assessments, and decision-making.
+           </p>
+         </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block content %}
+<div class="row mt-4">
+ <div class="col-5 d-block mx-auto border rounded cover-text-box">
+  <h2>Scientific Experts</h2>
+    <div class="table-responsive">
+      <table class="table table-striped">
+       <thead>
+        <tr>
+            <th>Name</th>
+            <th>Institution</th>
+            <th>Department</th>
+        </tr>
+       </thead>
+       <tbody>
+        <tr>
+            <td>Steve Easterbrook</td>
+            <td>University of Toronto</td>
+            <td>Computer Science</td>
+        </tr>
+        <tr>
+            <td>Samuel Foucher</td>
+            <td>Centre de recherche informatique de Montréal (CRIM)</td>
+            <td>Vision and Imaging Team</td>
+        </tr>
+        <tr>
+            <td>Nathan Gillett</td>
+            <td>Climate Research Division</td>
+            <td>Environment and Climate Change Canada</td>
+        </tr>
+        <tr>
+            <td>David Huard</td>
+            <td>Ouranos</td>
+            <td>Scénarios et services climatiques</td>
+        </tr>
+        <tr>
+            <td>Paul Kushner</td>
+            <td>University of Toronto</td>
+            <td>Physics</td>
+        </tr>
+        <tr>
+            <td>Damon H. Matthews</td>
+            <td>Concordia University</td>
+            <td>Geography, Planning and Environment</td>
+        </tr>
+        <tr>
+            <td>Dan McKenney</td>
+            <td>Natural Resources Canada</td>
+            <td>Canadian Forest Service</td>
+        </tr>
+        <tr>
+            <td>Bruno Tremblay</td>
+            <td>McGill University</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>Debra Wunch</td>
+            <td>University of Toronto</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>Francis Zwiers</td>
+            <td>University of Victoria</td>
+            <td>Pacific Climate Impacts Consortium</td>
+        </tr>
+       </tbody>
+      </table>
+    </div>
+ </div>
+ <div class="col-5 d-block mx-auto border rounded cover-text-box">
+    <h2>Learn More</h2>
+    <ul class="list-group">
+        <li class="list-group-item"><a class="ps-1" href="https://marbleclimate.com/" target="_blank"><img class="logo-list-item" src="images/marble.png">The DACCS Marble Platform</a></li>
+        <li class="list-group-item"><a class="ps-1" href="https://github.com/DACCS-Climate/DACCS-executive-committee" target="_blank"><i class="fab fa-github fa-lg"></i>The DACCS Exec Committee</a></li>
+    </ul>
+ </div>
+</div>
+{% endblock content %}
