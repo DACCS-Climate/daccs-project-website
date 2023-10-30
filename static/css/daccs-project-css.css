@@ -1,0 +1,13 @@
+body{
+    background-image: url("../images/mirror-lake.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.cover-text-box{
+    background-color: rgba(248, 249, 250, 0.7);
+}
+
+.logo-list-item{
+    width: 25px;
+}
