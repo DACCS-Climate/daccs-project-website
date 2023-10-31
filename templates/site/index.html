@@ -22,6 +22,26 @@
 </div>
 {% endblock %}
 
+
+
+{% set table_data = [
+                {"name": "Steve Easterbrook", "institution": "University of Toronto", "department": "Computer Science"},
+                {"name": "Samuel Foucher", "institution": "Centre de recherche informatique de Montréal (CRIM)", "department": "Vision and Imaging Team"},
+                {"name": "Nathan Gillett", "institution": "Climate Research Division", "department": "Environment and Climate Change Canada"},
+                {"name": "David Huard", "institution": "Ouranos", "department": "Scénarios et services climatiques"},
+                {"name": "Paul Kushner", "institution": "University of Toronto", "department": "Physics"},
+                {"name": "Damon H. Matthews", "institution": "Concordia University", "department": "Geography, Planning and Environment"},
+                {"name": "Dan McKenney", "institution": "Natural Resources Canada", "department": "Canadian Forest Service"},
+                {"name": "Bruno Tremblay", "institution": "McGill University", "department": ""},
+                {"name": "Debra Wunch", "institution": "University of Toronto", "department": ""},
+                {"name": "Francis Zwiers", "institution": "University of Victoria", "department": "Pacific Climate Impacts Consortium"},
+
+
+            ] %}
+
+
+
+
 {% block content %}
 <div class="row mt-4">
  <div class="col-5 d-block mx-auto border rounded cover-text-box">
@@ -36,56 +56,13 @@
         </tr>
        </thead>
        <tbody>
-        <tr>
-            <td>Steve Easterbrook</td>
-            <td>University of Toronto</td>
-            <td>Computer Science</td>
-        </tr>
-        <tr>
-            <td>Samuel Foucher</td>
-            <td>Centre de recherche informatique de Montréal (CRIM)</td>
-            <td>Vision and Imaging Team</td>
-        </tr>
-        <tr>
-            <td>Nathan Gillett</td>
-            <td>Climate Research Division</td>
-            <td>Environment and Climate Change Canada</td>
-        </tr>
-        <tr>
-            <td>David Huard</td>
-            <td>Ouranos</td>
-            <td>Scénarios et services climatiques</td>
-        </tr>
-        <tr>
-            <td>Paul Kushner</td>
-            <td>University of Toronto</td>
-            <td>Physics</td>
-        </tr>
-        <tr>
-            <td>Damon H. Matthews</td>
-            <td>Concordia University</td>
-            <td>Geography, Planning and Environment</td>
-        </tr>
-        <tr>
-            <td>Dan McKenney</td>
-            <td>Natural Resources Canada</td>
-            <td>Canadian Forest Service</td>
-        </tr>
-        <tr>
-            <td>Bruno Tremblay</td>
-            <td>McGill University</td>
-            <td></td>
-        </tr>
-        <tr>
-            <td>Debra Wunch</td>
-            <td>University of Toronto</td>
-            <td></td>
-        </tr>
-        <tr>
-            <td>Francis Zwiers</td>
-            <td>University of Victoria</td>
-            <td>Pacific Climate Impacts Consortium</td>
-        </tr>
+       {% for row in table_data %}
+            <tr>
+                <td>{{ row["name"] }}</td>
+                <td>{{ row["institution"] }}</td>
+                <td>{{ row["department"] }}</td>
+            </tr>
+       {% endfor %}
        </tbody>
       </table>
     </div>
@@ -93,8 +70,8 @@
  <div class="col-5 d-block mx-auto border rounded cover-text-box">
     <h2>Learn More</h2>
     <ul class="list-group">
-        <li class="list-group-item"><a class="ps-1" href="https://marbleclimate.com/" target="_blank"><img class="logo-list-item" src="images/marble.png">The DACCS Marble Platform</a></li>
-        <li class="list-group-item"><a class="ps-1" href="https://github.com/DACCS-Climate/DACCS-executive-committee" target="_blank"><i class="fab fa-github fa-lg"></i>The DACCS Exec Committee</a></li>
+        <li class="list-group-item"><a href="https://marbleclimate.com/" target="_blank"><img class="logo-list-item pe-1" src="images/marble.png">The DACCS Marble Platform</a></li>
+        <li class="list-group-item"><a href="https://github.com/DACCS-Climate/DACCS-executive-committee" target="_blank"><i class="fab fa-github fa-lg"></i> The DACCS Exec Committee</a></li>
     </ul>
  </div>
 </div>
