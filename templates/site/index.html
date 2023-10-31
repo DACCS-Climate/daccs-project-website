@@ -25,16 +25,16 @@
 
 
 {% set table_data = [
-                {"name": "Steve Easterbrook", "institution": "University of Toronto", "department": "Computer Science"},
-                {"name": "Samuel Foucher", "institution": "Centre de recherche informatique de Montréal (CRIM)", "department": "Vision and Imaging Team"},
-                {"name": "Nathan Gillett", "institution": "Climate Research Division", "department": "Environment and Climate Change Canada"},
-                {"name": "David Huard", "institution": "Ouranos", "department": "Scénarios et services climatiques"},
-                {"name": "Paul Kushner", "institution": "University of Toronto", "department": "Physics"},
-                {"name": "Damon H. Matthews", "institution": "Concordia University", "department": "Geography, Planning and Environment"},
-                {"name": "Dan McKenney", "institution": "Natural Resources Canada", "department": "Canadian Forest Service"},
-                {"name": "Bruno Tremblay", "institution": "McGill University", "department": ""},
-                {"name": "Debra Wunch", "institution": "University of Toronto", "department": ""},
-                {"name": "Francis Zwiers", "institution": "University of Victoria", "department": "Pacific Climate Impacts Consortium"},
+                {"name": "Steve Easterbrook", "affiliation": "University of Toronto", "expertise": "Computer Science"},
+                {"name": "Samuel Foucher", "affiliation": "Centre de recherche informatique de Montréal (CRIM)", "expertise": "Vision and Imaging"},
+                {"name": "Nathan Gillett", "affiliation": "Environment and Climate Change Canada", "expertise": "Climate Research Division"},
+                {"name": "David Huard", "affiliation": "Ouranos", "expertise": "Scénarios et services climatiques"},
+                {"name": "Paul Kushner", "affiliation": "University of Toronto", "expertise": "Physics"},
+                {"name": "Damon H. Matthews", "affiliation": "Concordia University", "expertise": "Geography, Planning and Environment"},
+                {"name": "Dan McKenney", "affiliation": "Natural Resources Canada", "expertise": "Canadian Forest Service"},
+                {"name": "Bruno Tremblay", "affiliation": "McGill University", "expertise": ""},
+                {"name": "Debra Wunch", "affiliation": "University of Toronto", "expertise": ""},
+                {"name": "Francis Zwiers", "affiliation": "University of Victoria", "expertise": "Pacific Climate Impacts Consortium"},
 
 
             ] %}
@@ -63,16 +63,17 @@
            <thead>
             <tr>
                 <th>Name</th>
-                <th>Institution</th>
-                <th>Department</th>
+                <th>Affiliation</th>
+                <th>Expertise</th>
+
             </tr>
            </thead>
            <tbody>
            {% for row in table_data %}
                 <tr>
                     <td>{{ row["name"] }}</td>
-                    <td>{{ row["institution"] }}</td>
-                    <td>{{ row["department"] }}</td>
+                    <td>{{ row["affiliation"] }}</td>
+                    <td>{{ row["expertise"] }}</td>
                 </tr>
            {% endfor %}
            </tbody>
