@@ -43,36 +43,42 @@
 
 
 {% block content %}
-<div class="row mt-4">
- <div class="col-5 d-block mx-auto border rounded cover-text-box">
-  <h2>Scientific Experts</h2>
-    <div class="table-responsive">
-      <table class="table table-striped">
-       <thead>
-        <tr>
-            <th>Name</th>
-            <th>Institution</th>
-            <th>Department</th>
-        </tr>
-       </thead>
-       <tbody>
-       {% for row in table_data %}
-            <tr>
-                <td>{{ row["name"] }}</td>
-                <td>{{ row["institution"] }}</td>
-                <td>{{ row["department"] }}</td>
-            </tr>
-       {% endfor %}
-       </tbody>
-      </table>
+<div class="col-12 d-block py-3 mx-auto">
+    <div class="row mt-4">
+         <div class="col-11 d-block py-3 mx-auto border rounded cover-text-box">
+            <h2>Learn More</h2>
+            <ul class="list-group">
+                <li class="list-group-item"><a href="https://marbleclimate.com/" target="_blank"><img class="logo-list-item pe-1" src="images/marble.png">The DACCS Marble Platform</a></li>
+                <li class="list-group-item"><a href="https://github.com/DACCS-Climate/DACCS-executive-committee" target="_blank"><i class="fab fa-github fa-lg"></i> The DACCS Exec Committee</a></li>
+            </ul>
+         </div>
     </div>
- </div>
- <div class="col-5 d-block mx-auto border rounded cover-text-box">
-    <h2>Learn More</h2>
-    <ul class="list-group">
-        <li class="list-group-item"><a href="https://marbleclimate.com/" target="_blank"><img class="logo-list-item pe-1" src="images/marble.png">The DACCS Marble Platform</a></li>
-        <li class="list-group-item"><a href="https://github.com/DACCS-Climate/DACCS-executive-committee" target="_blank"><i class="fab fa-github fa-lg"></i> The DACCS Exec Committee</a></li>
-    </ul>
- </div>
+</div>
+<div class="col-12 d-block py-3 mx-auto">
+    <div class="row mt-4">
+     <div class="col-11 d-block mx-auto border rounded cover-text-box">
+      <h2>Scientific Experts</h2>
+        <div class="table-responsive">
+          <table class="table table-striped">
+           <thead>
+            <tr>
+                <th>Name</th>
+                <th>Institution</th>
+                <th>Department</th>
+            </tr>
+           </thead>
+           <tbody>
+           {% for row in table_data %}
+                <tr>
+                    <td>{{ row["name"] }}</td>
+                    <td>{{ row["institution"] }}</td>
+                    <td>{{ row["department"] }}</td>
+                </tr>
+           {% endfor %}
+           </tbody>
+          </table>
+        </div>
+     </div>
+    </div>
 </div>
 {% endblock content %}
