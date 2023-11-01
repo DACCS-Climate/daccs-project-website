@@ -22,80 +22,64 @@
 </div>
 {% endblock %}
 
+
+
+{% set table_data = [
+                {"name": "Steve Easterbrook", "affiliation": "University of Toronto", "expertise": "Computer Science, Machine Learning"},
+                {"name": "Samuel Foucher", "affiliation": "Computer Research Institute of Montreal (CRIM)", "expertise": "Vision and Imaging"},
+                {"name": "Nathan Gillett", "affiliation": "Environment and Climate Change Canada", "expertise": "Climate Research"},
+                {"name": "David Huard", "affiliation": "Ouranos", "expertise": "Climate Scenarios and Services"},
+                {"name": "Paul Kushner", "affiliation": "University of Toronto", "expertise": "Physics"},
+                {"name": "Damon H. Matthews", "affiliation": "Concordia University", "expertise": "Geography, Planning and Environment"},
+                {"name": "Dan McKenney", "affiliation": "Natural Resources Canada", "expertise": "Canadian Forest Service"},
+                {"name": "Bruno Tremblay", "affiliation": "McGill University", "expertise": ""},
+                {"name": "Debra Wunch", "affiliation": "University of Toronto", "expertise": ""},
+                {"name": "Francis Zwiers", "affiliation": "University of Victoria", "expertise": "Pacific Climate Impacts Consortium"}
+
+
+            ] %}
+
+
+
+
 {% block content %}
-<div class="row mt-4">
- <div class="col-5 d-block mx-auto border rounded cover-text-box">
-  <h2>Scientific Experts</h2>
-    <div class="table-responsive">
-      <table class="table table-striped">
-       <thead>
-        <tr>
-            <th>Name</th>
-            <th>Institution</th>
-            <th>Department</th>
-        </tr>
-       </thead>
-       <tbody>
-        <tr>
-            <td>Steve Easterbrook</td>
-            <td>University of Toronto</td>
-            <td>Computer Science</td>
-        </tr>
-        <tr>
-            <td>Samuel Foucher</td>
-            <td>Centre de recherche informatique de Montréal (CRIM)</td>
-            <td>Vision and Imaging Team</td>
-        </tr>
-        <tr>
-            <td>Nathan Gillett</td>
-            <td>Climate Research Division</td>
-            <td>Environment and Climate Change Canada</td>
-        </tr>
-        <tr>
-            <td>David Huard</td>
-            <td>Ouranos</td>
-            <td>Scénarios et services climatiques</td>
-        </tr>
-        <tr>
-            <td>Paul Kushner</td>
-            <td>University of Toronto</td>
-            <td>Physics</td>
-        </tr>
-        <tr>
-            <td>Damon H. Matthews</td>
-            <td>Concordia University</td>
-            <td>Geography, Planning and Environment</td>
-        </tr>
-        <tr>
-            <td>Dan McKenney</td>
-            <td>Natural Resources Canada</td>
-            <td>Canadian Forest Service</td>
-        </tr>
-        <tr>
-            <td>Bruno Tremblay</td>
-            <td>McGill University</td>
-            <td></td>
-        </tr>
-        <tr>
-            <td>Debra Wunch</td>
-            <td>University of Toronto</td>
-            <td></td>
-        </tr>
-        <tr>
-            <td>Francis Zwiers</td>
-            <td>University of Victoria</td>
-            <td>Pacific Climate Impacts Consortium</td>
-        </tr>
-       </tbody>
-      </table>
+<div class="col-12 d-block py-3 mx-auto">
+    <div class="row mt-4">
+         <div class="col-11 d-block py-3 mx-auto border rounded cover-text-box">
+            <h2>Learn More</h2>
+            <ul class="list-group">
+                <li class="list-group-item"><a href="https://marbleclimate.com/" target="_blank"><img class="logo-list-item pe-1" src="images/marble.png">The DACCS Marble Platform</a></li>
+                <li class="list-group-item"><a href="https://github.com/DACCS-Climate/DACCS-executive-committee" target="_blank"><i class="fab fa-github fa-lg"></i> The DACCS Executive Committee</a></li>
+            </ul>
+         </div>
     </div>
- </div>
- <div class="col-5 d-block mx-auto border rounded cover-text-box">
-    <h2>Learn More</h2>
-    <ul class="list-group">
-        <li class="list-group-item"><a class="ps-1" href="https://marbleclimate.com/" target="_blank"><img class="logo-list-item" src="images/marble.png">The DACCS Marble Platform</a></li>
-        <li class="list-group-item"><a class="ps-1" href="https://github.com/DACCS-Climate/DACCS-executive-committee" target="_blank"><i class="fab fa-github fa-lg"></i>The DACCS Exec Committee</a></li>
-    </ul>
- </div>
+</div>
+<div class="col-12 d-block py-3 mx-auto">
+    <div class="row mt-4">
+     <div class="col-11 d-block mx-auto border rounded cover-text-box">
+      <h2>Scientific Experts</h2>
+        <div class="table-responsive">
+          <table class="table table-striped">
+           <thead>
+            <tr>
+                <th>Name</th>
+                <th>Affiliation</th>
+                <th>Expertise</th>
+
+            </tr>
+           </thead>
+           <tbody>
+           {% for row in table_data %}
+                <tr>
+                    <td>{{ row["name"] }}</td>
+                    <td>{{ row["affiliation"] }}</td>
+                    <td>{{ row["expertise"] }}</td>
+                </tr>
+           {% endfor %}
+           </tbody>
+          </table>
+        </div>
+     </div>
+    </div>
 </div>
 {% endblock content %}
