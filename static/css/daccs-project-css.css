@@ -11,3 +11,8 @@ body{
 .logo-list-item{
     width: 25px;
 }
+
+.daccs-github-link{
+    color: inherit;
+    text-decoration: none;
+}
