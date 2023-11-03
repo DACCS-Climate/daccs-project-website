@@ -4,8 +4,18 @@ body{
     background-size: cover;
 }
 
-.cover-text-box{
+.cover-text-bg{
     background-color: rgba(248, 249, 250, 0.7);
+}
+
+.cover-text-box{
+    background-color: rgba(53, 84, 113, 0.3);
+}
+
+.mission-text-box{
+    background-color: rgba(53, 84, 113, 0.3);
+    border: 1px solid rgba(53, 84, 113, 0.3);
+    border-radius: 8px;
 }
 
 .logo-list-item{
@@ -15,4 +25,9 @@ body{
 .daccs-github-link{
     color: inherit;
     text-decoration: none;
+}
+
+.funder-image{
+    width: 50%;
+    max-width: 75%;
 }
