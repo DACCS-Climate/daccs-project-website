@@ -19,18 +19,6 @@ def filter_site_templates(template, extensions=("js", "html")):
             basename.rsplit(".", 1)[1] in extensions)
 
 
-def build_tutorials(build_directory):
-    subprocess.run(
-        [
-            "jupyter-book",
-            "build",
-            os.path.join(TUTORIALS_PATH, "tutorials"),
-            "--path-output",
-            os.path.join(build_directory, "tutorials"),
-        ],
-        check=True,
-    )
-
 def build(build_directory):
     env = Environment(
         loader=FileSystemLoader(TEMPLATE_PATH), autoescape=select_autoescape(enabled_extensions=("html", "js", "css"))
