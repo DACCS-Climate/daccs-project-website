@@ -82,4 +82,27 @@
      </div>
     </div>
 </div>
+
+<div class="col-12 d-block py-3 mx-auto">
+    <div class="row mt-4">
+     <div class="col-11 d-block py-2 mx-auto border rounded cover-text-bg">
+      <h2>Our Funders</h2>
+       {% set funder_images = [
+                {"image": "images/logos/BCID_Supported_H_RGB_pos.png"},
+                {"image": "images/logos/ontario-researh-fund.jpg"},
+                {"image": "images/logos/MEIE_-Avril_2014-300x130.jpg"},
+                {"image": "images/logos/CFI-Logo-RGB.svg"}
+            ] %}
+        <div class="row mx-auto">
+            {% for image in funder_images %}
+                {% if image["image"] == "images/logos/CFI-Logo-RGB.svg"   %}
+                    <div class="col-3 d-block px-auto bg-white"><img class="img-fluid funder-image" src="{{ image["image"] }}"></div>
+                {% else %}
+                    <div class="col-3 d-block bg-white"><img class="img-fluid funder-image" src="{{ image["image"] }}"></div>
+                {% endif %}
+            {% endfor %}
+        </div>
+     </div>
+    </div>
+</div>
 {% endblock content %}
