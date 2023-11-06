@@ -2,7 +2,7 @@
 {% set page_title = "The DACCS Project" %}
 {% set page_heading = "The DACCS Project" %}
 
-{% block project_description %}
+{% block content %}
 <div class="col-12 d-block py-3 mx-auto">
     <div class="row">
         <div class="col-11 d-block py-2 mx-auto border rounded cover-text-bg">
@@ -23,7 +23,6 @@
                         opening up new forms of analysis using state-of-the-art machine learning and visualisation tools.
                     </p>
                 </div>
-
                 <div class="col-5 d-block mx-auto border rounded cover-text-bg">
                     <h2>Vision</h2>
                     <p>
@@ -50,7 +49,6 @@
         </div>
      </div>
 </div>
-{% endblock %}
 
 {% set table_data = [
                 {"name": "Steve Easterbrook", "affiliation": "University of Toronto", "expertise": "Computer Science, Machine Learning"},
@@ -64,7 +62,7 @@
                 {"name": "Debra Wunch", "affiliation": "University of Toronto", "expertise": ""},
                 {"name": "Francis Zwiers", "affiliation": "University of Victoria", "expertise": "Pacific Climate Impacts Consortium"}
             ] %}
-{% block content %}
+
 <div class="col-12 d-block py-3 mx-auto">
     <div class="row mt-4">
          <div class="col-11 d-block py-2 mx-auto border rounded cover-text-bg">
@@ -111,6 +109,4 @@
      </div>
     </div>
 </div>
-
-
 {% endblock content %}
