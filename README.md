@@ -2,8 +2,6 @@
 This site is to give a summary of what the DACCS project is about.  It includes a mission statement, vision statement, a list of the Principle Investigators and a list of the Funders.
 
 ## Building the site
-Clone the repository at [https://github.com/DACCS-Climate/daccs-project-website](https://github.com/DACCS-Climate/daccs-project-website)
-
 Navigate to the root directory, install the requirements, and build the site by running: 
 ```shell
 python3 -m pip install -r requirements.txt
