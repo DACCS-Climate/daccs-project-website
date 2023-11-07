@@ -16,3 +16,8 @@ body{
     color: inherit;
     text-decoration: none;
 }
+
+.funder-image{
+    width: 50%;
+    max-width: 75%;
+}
