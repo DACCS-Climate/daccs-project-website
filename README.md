@@ -10,6 +10,9 @@ python3 build.py
 
 The site files will be automatically built and moved to the `/build` folder.
 
+By default, all files will be written to the `build/` directory. To specify a different directory use the `-b` option
+when calling `build.py`.
+
 ## To view the site
 The files in build directory can be served as a static website. Navigate to the `/build` folder and start an 
 http server. For example:
