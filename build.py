@@ -1,5 +1,4 @@
 import os
-import subprocess
 import shutil
 import argparse
 
@@ -8,7 +7,6 @@ from jinja2 import FileSystemLoader, Environment, select_autoescape
 THIS_DIR = os.path.abspath(os.path.dirname(__file__))
 TEMPLATE_PATH = os.path.join(THIS_DIR, "templates")
 SITE_PATH = os.path.join(TEMPLATE_PATH, "site")
-TUTORIALS_PATH = os.path.join(THIS_DIR, "marble-tutorials")
 
 
 def filter_site_templates(template, extensions=("js", "html")):
@@ -18,18 +16,6 @@ def filter_site_templates(template, extensions=("js", "html")):
             "." in basename and
             basename.rsplit(".", 1)[1] in extensions)
 
-
-def build_tutorials(build_directory):
-    subprocess.run(
-        [
-            "jupyter-book",
-            "build",
-            os.path.join(TUTORIALS_PATH, "tutorials"),
-            "--path-output",
-            os.path.join(build_directory, "tutorials"),
-        ],
-        check=True,
-    )
 
 def build(build_directory):
     env = Environment(
@@ -45,7 +31,6 @@ def build(build_directory):
         os.makedirs(os.path.dirname(build_destination), exist_ok=True)
         with open(build_destination, "w") as f:
             f.write(env.get_template(template).render())
-
 
 
 if __name__ == "__main__":
