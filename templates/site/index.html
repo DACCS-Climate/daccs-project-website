@@ -2,27 +2,55 @@
 {% set page_title = "The DACCS Project" %}
 {% set page_heading = "The DACCS Project" %}
 
-{% block project_description %}
+{% block content %}
 <div class="col-12 d-block py-3 mx-auto">
     <div class="row">
-        <div class="col-11 d-block mx-auto border rounded cover-text-box">
-            <h1 class="text-center">{{ page_heading }}</h1>
-            <p>
-                 The Data Analytics for Canadian Climate Services (DACCS) gateway will facilitate the conversion of raw climate data
-                 from satellite observations and simulation models into relevant, credible and actionable information products.
-                 DACCS is a Science Gateway comprised of reusable modular components that will provide services to a broad scientific
-                 community through a unified user interface for: dataset search and discovery; user data management; data analytics;
-                 visualisation; workflow management; publishing; and application deployment. As part of a larger Federated Cloud
-                 Infrastructure, through this gateway, scientists can access data from different sources and process them using
-                 existing algorithms developed by the academic, government and private sectors. Typical outputs are tables, time
-                 series and graphics that support climate change impact studies, vulnerability assessments, and decision-making.
-           </p>
-         </div>
-    </div>
+        <div class="col-11 d-block py-2 mx-auto border rounded cover-text-bg">
+            <h1 class="text-center mb-3">{{ page_heading }}</h1>
+            <div class="row">
+                <div class="col-9 d-block mx-auto px-3 py-2 bg-white">
+                    <h2>Mission</h2>
+                    <p>
+                        Data Analytics for Canadian Climate Services (DACCS) is a collaboration
+                        between the University of Toronto, the Pacific Climate Impacts Consortium (PCIC), the Computer Research
+                        Institute of Montréal (CRIM), and Ouranos.
+                    </p>
+                    <p>
+                        Canada's data infrastructure is inadequate for working with the rapidly growing volume of climate and
+                        Earth observation data. The DACCS project will simplify access to climate
+                        and remote sensing data, and will allow scientists and climate researchers to publish their
+                        analysis tools alongside the data, thus lowering the barrier to innovation in climate science and
+                        opening up new forms of analysis using state-of-the-art machine learning and visualisation tools.
+                    </p>
+                </div>
+            </div>
+            <div class="row mt-2">
+                <div class="col-9 d-block mx-auto px-3 py-2 border rounded bg-white">
+                    <h2>Vision</h2>
+                    <p>
+                        The aim of the DACCS project is to drastically simplify the time-consuming
+                        tasks required to extract relevant climate information from large data sets, allowing researchers to
+                        focus on solving scientific problems rather than on data management.
+                    </p>
+                    <p>
+                        DACCS is developing a platform called Marble that will facilitate the conversion of raw climate data
+                        from satellite observations and simulation models into relevant, credible and actionable information products.
+                        The Marble Platform is comprised of reusable modular components that will provide services to a broad scientific
+                        community through a unified user interface for: dataset search and discovery; user data management; data analytics;
+                        visualisation; workflow management; publishing; and application deployment. As part of a larger Federated Cloud
+                        Infrastructure, through Marble, scientists can access data from different sources and process them using
+                        existing algorithms developed by the academic, government and private sectors.
+                    </p>
+                    <p>
+                        The Marble Platform will foster the creation of a new generation of advanced data
+                        analytics tools, in order to better understand the relationships between remote sensing data,
+                        climate model projections, and climate change impact studies.
+                    </p>
+                </div>
+            </div>
+        </div>
+     </div>
 </div>
-{% endblock %}
-
-
 
 {% set table_data = [
                 {"name": "Steve Easterbrook", "affiliation": "University of Toronto", "expertise": "Computer Science, Machine Learning"},
@@ -35,28 +63,22 @@
                 {"name": "Bruno Tremblay", "affiliation": "McGill University", "expertise": ""},
                 {"name": "Debra Wunch", "affiliation": "University of Toronto", "expertise": ""},
                 {"name": "Francis Zwiers", "affiliation": "University of Victoria", "expertise": "Pacific Climate Impacts Consortium"}
-
-
             ] %}
 
-
-
-
-{% block content %}
 <div class="col-12 d-block py-3 mx-auto">
     <div class="row mt-4">
-         <div class="col-11 d-block py-3 mx-auto border rounded cover-text-box">
+         <div class="col-11 d-block py-2 mx-auto border rounded cover-text-bg">
             <h2>Learn More</h2>
             <ul class="list-group">
                 <li class="list-group-item"><a href="https://marbleclimate.com/" target="_blank"><img class="logo-list-item pe-1" src="images/marble.png">The DACCS Marble Platform</a></li>
-                <li class="list-group-item"><a href="https://github.com/DACCS-Climate/DACCS-executive-committee" target="_blank"><i class="fab fa-github fa-lg"></i> The DACCS Executive Committee</a></li>
+                <li class="list-group-item"><a href="https://github.com/DACCS-Climate/DACCS-executive-committee" target="_blank"><i class="fab fa-github fa-lg"></i>The DACCS Executive Committee</a></li>
             </ul>
          </div>
     </div>
 </div>
 <div class="col-12 d-block py-3 mx-auto">
     <div class="row mt-4">
-     <div class="col-11 d-block mx-auto border rounded cover-text-box">
+     <div class="col-11 d-block py-2 mx-auto border rounded cover-text-bg">
       <h2>Scientific Experts</h2>
         <div class="table-responsive">
           <table class="table table-striped">
@@ -65,21 +87,35 @@
                 <th>Name</th>
                 <th>Affiliation</th>
                 <th>Expertise</th>
-
             </tr>
            </thead>
            <tbody>
            {% for row in table_data %}
-                <tr>
-                    <td>{{ row["name"] }}</td>
-                    <td>{{ row["affiliation"] }}</td>
-                    <td>{{ row["expertise"] }}</td>
-                </tr>
+               {% if row["name"] == "Dan McKenney" or row["name"] == "Francis Zwiers" %}
+                    <tr>
+                        <td>{{ row["name"] }}</td>
+                        <td>{{ row["expertise"] }}, {{ row["affiliation"] }}</td>
+                        <td></td>
+                    </tr>
+               {% else %}
+                   <tr>
+                       <td>{{ row["name"] }}</td>
+                       <td>{{ row["affiliation"] }}</td>
+                       <td>{{ row["expertise"] }}</td>
+                   </tr>
+               {% endif %}
            {% endfor %}
            </tbody>
           </table>
         </div>
      </div>
+    </div>
+</div>
+<div class="col-12 d-block py-3 mx-auto">
+    <div class="row">
+        <div class="col-11 d-block py-2 mx-auto border rounded text-center cover-text-bg">
+            <p><a href="https://pixabay.com/photos/mirror-lake-yosemite-national-park-1884282/">Credit for image of Yosemite National Park given to Pixabay</a></p>
+        </div>
     </div>
 </div>
 {% endblock content %}
